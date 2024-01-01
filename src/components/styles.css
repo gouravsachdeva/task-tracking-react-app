@@ -1,6 +1,6 @@
 .input {
   display: flex;
-  width: 90%;
+  width: 95%;
   position: relative;
   align-items: center;
 }
@@ -44,20 +44,56 @@
   box-shadow: 0 0 5px black;
 }
 
+.container {
+  display: flex;
+  width: 95%;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .todos {
   display: flex;
-  justify-content: space-evenly;
-  width: 90%;
-  flex-wrap: wrap;
+  width: 47.5%;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgb(50, 195, 205);
+}
+
+.remove {
+  background-color: rgb(235, 103, 80);
+}
+
+.dragactive {
+  background-color: rgb(0, 221, 236);
+}
+
+.dragcomplete {
+  background-color: rgb(255, 38, 0);
+}
+
+.drag {
+  box-shadow: 0 0 20px black;
+}
+
+.todos__heading {
+  font-size: 30px;
+  color: white;
 }
 
 .todos__single {
   display: flex;
-  width: 29.5%;
   border-radius: 5px;
   padding: 20px;
   margin-top: 15px;
   background-image: url("https://img.freepik.com/free-photo/abstract-solid-shining-yellow-gradient-studio-wall-room-background_1258-54539.jpg?w=1800&t=st=1704102622~exp=1704103222~hmac=c49fd945f82251ac0318d1d04d606cb7e54a94ad22901cd8f08d683e0a4e46dd");
+  transition: 0.2s;
+}
+
+.todos__single:hover {
+  box-shadow: 0 0 5px black;
+  transform: scale(1.03);
 }
 
 .todos__single--text {
@@ -77,9 +113,9 @@
   cursor: pointer;
 }
 
-@media (max-width: 1200px) {
-  .todos__single {
-    width: 40%;
+@media (max-width: 1100px) {
+  .todos {
+    width: 45%;
   }
 }
 
@@ -87,10 +123,12 @@
   .input {
     width: 95%;
   }
+  .container {
+    width: 95%;
+    flex-direction: column;
+  }
   .todos {
     width: 95%;
-  }
-  .todos__single {
-    width: 100%;
+    margin-bottom: 10px;
   }
 }
